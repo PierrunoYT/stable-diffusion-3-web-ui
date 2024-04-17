@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stability AI Image Generator</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Stability AI Image Generator</h1>
+  <form id="generateForm">
+    <label for="prompt">Prompt:</label><br>
+    <input type="text" id="prompt" name="prompt"><br>
+    <label for="outputFormat">Output Format:</label><br>
+    <select id="outputFormat" name="outputFormat">
+      <option value="jpeg">JPEG</option>
+      <option value="png">PNG</option>
+    </select><br>
+    <label for="aspectRatio">Aspect Ratio:</label><br>
+    <select id="aspectRatio" name="aspectRatio">
+      <option value="1:1" selected>1:1</option>
+      <option value="16:9">16:9</option>
+      <option value="21:9">21:9</option>
+      <option value="2:3">2:3</option>
+      <option value="3:2">3:2</option>
+      <option value="4:5">4:5</option>
+      <option value="5:4">5:4</option>
+      <option value="9:16">9:16</option>
+      <option value="9:21">9:21</option>
+    </select><br>
+    <input type="submit" value="Generate Image">
+  </form> 
+  <div id="output"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
