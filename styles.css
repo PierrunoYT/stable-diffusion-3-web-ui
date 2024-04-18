@@ -63,9 +63,14 @@ input[type="submit"]:hover {
 }
 
 #output {
-  max-width: 500px;
+  max-width: 800px;
   margin: 20px auto;
   text-align: center;
+}
+
+.image-container {
+  display: inline-block;
+  margin-bottom: 20px;
 }
 
 .preview-image {
@@ -74,6 +79,22 @@ input[type="submit"]:hover {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
+}
+
+.download-button {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.download-button:hover {
+  background-color: #45a049;
 }
 
 .hidden {
