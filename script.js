@@ -36,9 +36,12 @@ document.getElementById('generateForm').addEventListener('submit', async (event)
     );
 
     const imageUrl = URL.createObjectURL(response.data);
+    const imageName = `generated-image-${Date.now()}.${outputFormat}`;
     document.getElementById('output').innerHTML = `
-      <img src="${imageUrl}" alt="Generated Image" class="preview-image">
-      <a href="${imageUrl}" download="generated-image.${outputFormat}">Download Image</a>
+      <div class="image-container">
+        <img src="${imageUrl}" alt="Generated Image" class="preview-image">
+        <a href="${imageUrl}" download="${imageName}" class="download-button">Download Image</a>
+      </div>
     `;
   } catch (error) {
     console.error('Error:', error);
