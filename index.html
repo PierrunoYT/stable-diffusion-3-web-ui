@@ -9,12 +9,7 @@
   <h1>Stability AI Image Generator</h1>
   <form id="generateForm">
     <label for="prompt">Prompt:</label><br>
-    <input type="text" id="prompt" name="prompt"><br>
-    <label for="outputFormat">Output Format:</label><br>
-    <select id="outputFormat" name="outputFormat">
-      <option value="jpeg">JPEG</option>
-      <option value="png">PNG</option>
-    </select><br>
+    <input type="text" id="prompt" name="prompt" required><br>
     <label for="aspectRatio">Aspect Ratio:</label><br>
     <select id="aspectRatio" name="aspectRatio">
       <option value="1:1" selected>1:1</option>
@@ -27,8 +22,34 @@
       <option value="9:16">9:16</option>
       <option value="9:21">9:21</option>
     </select><br>
+    <label for="negativePrompt">Negative Prompt:</label><br>
+    <input type="text" id="negativePrompt" name="negativePrompt"><br>
+    <label for="seed">Seed:</label><br>
+    <input type="number" id="seed" name="seed" min="0" max="4294967294" value="0"><br>
+    <label for="stylePreset">Style Preset:</label><br>
+    <select id="stylePreset" name="stylePreset">
+      <option value="">None</option>
+      <option value="3d-model">3D Model</option>
+      <option value="analog-film">Analog Film</option>
+      <option value="anime">Anime</option>
+      <option value="cinematic">Cinematic</option>
+      <option value="comic-book">Comic Book</option>
+      <option value="digital-art">Digital Art</option>
+      <option value="fantasy-art">Fantasy Art</option>
+      <option value="line-art">Line Art</option>
+      <option value="photographic">Photographic</option>
+      <option value="pixel-art">Pixel Art</option>
+    </select><br>
+    <label for="outputFormat">Output Format:</label><br>
+    <select id="outputFormat" name="outputFormat">
+      <option value="png" selected>PNG</option>
+      <option value="jpeg">JPEG</option>
+      <option value="webp">WebP</option>
+    </select><br>
     <input type="submit" value="Generate Image">
-  </form> 
+  </form>
+  <div id="loading" class="hidden">Loading...</div>
+  <div id="error" class="hidden"></div>
   <div id="output"></div>
 
   <script src="script.js"></script>
